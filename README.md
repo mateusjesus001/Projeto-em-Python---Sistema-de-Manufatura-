@@ -59,4 +59,4 @@ A principal característica do sistema é a sua capacidade de calcular a viabili
     ```
 ## 🙋‍♂️ Time
   
-  Projeto feito por mim em conjunto com Leonardo Istamilo, Alcides Neto e José Emirton no primeiro período da faculdade.
+  Projeto feito por mim em conjunto com João Victor e Arthur Nícolas no segundo período da faculdade.
