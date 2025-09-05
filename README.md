@@ -57,3 +57,4 @@ A principal característica do sistema é a sua capacidade de calcular a viabili
     ```bash
     python nome_do_seu_arquivo.py
     ```
+Projeto feito por mim em conjunto com Leonardo Istamilo, Alcides Neto e José Emirton no primeiro período da faculdade.
