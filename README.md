@@ -1,41 +1,59 @@
-# PROJETO:  Módulo de Manufatura
+# Sistema de Gestão de Manufatura em Python
 
-Esse programa vai gerar o custo real de produção de um determinado produto.
+![Python](https://img.shields.io/badge/python-3.x-blue.svg) ![Pandas](https://img.shields.io/badge/pandas-1.x-brightgreen.svg) ![ReportLab](https://img.shields.io/badge/reportlab-3.x-red.svg)
 
+## 📖 Sobre o Projeto
 
-**ENTRADA DE DADOS:**
+Este é um sistema de linha de comando (CLI) para gestão de um pequeno processo de manufatura. Ele foi desenvolvido como uma solução prática para controlar o inventário de insumos (matéria-prima) e produtos acabados, automatizando a verificação de estoque antes de iniciar uma ordem de produção.
 
-Insumos da produção (Matéria-prima utilizada para produzir determinando produto);
+A principal característica do sistema é a sua capacidade de calcular a viabilidade de fabricar uma determinada quantidade de produtos, informando ao usuário se os insumos disponíveis são suficientes e alertando sobre o que está em falta. Os dados são lidos e salvos em uma planilha Excel, facilitando a visualização e edição externa.
 
-Insumos de embalagem (Que fazem parte dos insumos no processo final de produção.);
+## ✨ Funcionalidades
 
-Custo de energia elétrica, Gás de acordo com a necessidade de produção;
+-   **📦 Módulo de Cadastro e Eliminação:**
+    -   Cadastro de novos insumos com nome, descrição, quantidade e valor.
+    -   Cadastro de produtos, com a definição da "receita" (quais insumos e quantidades são necessários).
+    -   Eliminação segura de insumos e produtos (com validações para não excluir itens com estoque).
 
-Custo homem/ custo máquina (Esse custo é calculado através do estudo de tempos e movimentos, chegando o custo e tempo/homem e tempo/máquina de acordo com a jornada de trabalho realizada).
+-   **🔄 Módulo de Estoque:**
+    -   Atualização rápida da quantidade de qualquer insumo em estoque.
 
-**SAÍDAS:**
+-   **🏭 Módulo de Fabricação:**
+    -   Seleção de um produto e da quantidade a ser fabricada.
+    -   Análise automática do estoque: o sistema compara os insumos necessários com os disponíveis.
+    -   Feedback detalhado: informa se a produção é viável, listando os insumos suficientes e os que estão em falta.
+    -   Cálculo do custo total de produção.
 
-Relatório de itens cadastrados;
+-   **📄 Módulo de Relatórios:**
+    -   Geração de um relatório de insumos (`Relatorio_de_Insumos.pdf`), listando todos os itens em estoque, com seus detalhes.
+    -   Geração de um relatório de produtos (`Relatorio_Produtos.pdf`), detalhando a composição de cada produto cadastrado.
 
-Relatório de insumos cadastrados;
+## 🛠️ Tecnologias Utilizadas
 
-Relatório de Estoque (Estrada de estoque, saída de estoque e saldo atual);
+-   **Python:** Linguagem principal do projeto.
+-   **Pandas:** Utilizado para a manipulação de dados e interação com a planilha Excel (`BD/PLAN_ITENS.xlsx`), que funciona como banco de dados.
+-   **ReportLab:** Biblioteca usada para gerar os relatórios em formato PDF de forma programática.
 
-Relatório custo de produção por item e pela quantidade produzida;
+## 🚀 Como Executar
 
-Em analise a utilização ou não de gráficos com dados da produção. Caso seja aprovado o uso de gráficos, teríamos gráficos para produção realizada, saída de itens do estoque e comparação de preço dos itens utilizado na produção.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://URL-DO-SEU-REPOSITORIO.git](https://URL-DO-SEU-REPOSITORIO.git)
+    cd NOME-DA-PASTA
+    ```
 
-**FUNCIONALIDADES EM DISCUSSÃO PRA DESENVOLVIMENTO:**
-Criação de interface gráfica (Como fazer, design....);
+2.  **Instale as dependências:**
+    ```bash
+    pip install pandas openpyxl reportlab
+    ```
+    *Nota: `openpyxl` é necessário para que o Pandas possa ler e escrever em arquivos `.xlsx`.*
 
-Criação ficha técnica de item;
+3.  **Estrutura de arquivos:**
+    Certifique-se de que a estrutura de pastas está correta. O script espera encontrar:
+    -   Um diretório `BD/` contendo o arquivo `PLAN_ITENS.xlsx`.
+    -   Um diretório `Relatorios/` onde os PDFs gerados serão salvos.
 
-Criação de relatórios (gerados em PDF ou Excel);
-
-E-mail automático de solicitação de compra de acordo com estoque mínimo de itens de insumo.
-
-
-**OBSERVAÇÕES:**
-
-Não é necessário criação de usuário;
-
+4.  **Execute o script principal:**
+    ```bash
+    python nome_do_seu_arquivo.py
+    ```
